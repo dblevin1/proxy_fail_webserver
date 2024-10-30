@@ -1,0 +1,6 @@
+services:
+  backup-error-webserver:
+    image: backup-error-webserver
+    build: .
+    ports:
+      - "80:80"
