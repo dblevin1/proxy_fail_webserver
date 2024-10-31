@@ -1,0 +1,35 @@
+http:
+  routers:
+    main:
+      rule: "Host(`localhost`)"
+      entrypoints:
+        - web
+      service: app
+      middlewares:
+        - test-errors
+  services:
+    app:
+      failover:
+        service: main
+        fallback: backup
+    main:
+      loadBalancer:
+        servers:
+          - url: "http://docassemblee.docker"
+        healthCheck:
+          path: /status
+          interval: 10s
+          timeout: 1s
+
+    backup:
+      loadBalancer:
+        servers:
+          - url: "http://failover.docker"
+  middlewares:
+    test-errors:
+      errors:
+        status:
+          - "502"
+          - "404"
+          - "503"
+        service: backup

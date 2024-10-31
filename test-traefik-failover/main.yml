@@ -1,0 +1,13 @@
+services:
+  main:
+    image: nginx
+    stop_grace_period: 1s
+    hostname: main.docker
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    name: app-network
+    driver: bridge
+    external: true

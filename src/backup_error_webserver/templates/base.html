@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <title>{% block title %}Oops!{% endblock %}</title>
+    {% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css' ) }}">
+    {% endblock %}
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+    <script src="https://unpkg.com/htmx-ext-head-support@2.0.1/head-support.js"></script>
+    {% endblock %}
+</head>
+
+{% block body %}{% endblock %}
+
+</html>

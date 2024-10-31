@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<body hx-ext="head-support">
+    <div style="width: 100%; font-size: 1.2em; text-align: center; padding-top: 3rem;">
+        <div style="max-width: 60em; margin: auto;">
+            <div hx-get="{{ url }}" hx-trigger="every 30s" hx-target="body" hx-swap="outerHTML">
+                {{ content|safe }}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -4,3 +4,7 @@ services:
     build: .
     ports:
       - "80:80"
+    volumes:
+      - ./test-traefik-failover/content:/content
+    environment:
+      - CONTENT_HTML_FILE="/content/content.html"

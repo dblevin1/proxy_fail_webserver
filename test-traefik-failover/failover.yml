@@ -1,0 +1,16 @@
+services:
+  backup-error-webserver:
+    hostname: failover.docker
+    image: backup-error-webserver
+    volumes:
+      - ./content:/content
+    environment:
+      - CONTENT_HTML_FILE="/content/content.html"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    name: app-network
+    driver: bridge
+    external: true
