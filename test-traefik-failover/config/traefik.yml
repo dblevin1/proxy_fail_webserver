@@ -15,7 +15,7 @@ http:
     main:
       loadBalancer:
         servers:
-          - url: "http://docassemblee.docker"
+          - url: "http://main.docker" # change this while everything is running to test failover
         healthCheck:
           path: /status
           interval: 10s

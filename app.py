@@ -1,4 +1,4 @@
 try:
-    from .src.backup_error_webserver.app import app
+    from .src.proxy_fail_webserver.app import app
 except ImportError:
-    from backup_error_webserver.app import app
+    from proxy_fail_webserver.app import app

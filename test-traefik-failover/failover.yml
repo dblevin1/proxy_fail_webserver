@@ -1,7 +1,7 @@
 services:
-  backup-error-webserver:
+  proxy_fail_webserver:
     hostname: failover.docker
-    image: backup-error-webserver
+    image: proxy_fail_webserver
     volumes:
       - ./content:/content
     environment:

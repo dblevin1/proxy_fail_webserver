@@ -1,6 +1,6 @@
 services:
-  backup-error-webserver:
-    image: backup-error-webserver
+  proxy_fail_webserver:
+    image: proxy_fail_webserver
     build: .
     ports:
       - "80:80"
